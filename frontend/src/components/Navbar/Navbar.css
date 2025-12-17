@@ -1,0 +1,200 @@
+/* Responsive Navbar with Modern Fonts and Rounded Corners */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: linear-gradient(135deg, #050000 0%, #170101 100%);
+  position: relative;
+  border-radius: 20px;
+
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(149, 208, 223, 0.18);
+}
+
+/* Modern Font for Logo */
+.navbar-logo {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #01F9C6;
+  text-decoration: none;
+ 
+  padding: 0.6rem 2rem;
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  font-family: 'Poppins', 'Montserrat', 'Segoe UI', sans-serif;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Modern Font for Navigation Links */
+.navbar-link {
+  text-decoration: none;
+  color: #01F9C6;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border-radius: 14px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #01F9C6(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(74, 223, 29, 0.08);
+  font-family: 'Inter', 'SF Pro Display', 'Segoe UI', sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.2px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(28, 145, 121, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.navbar-link:hover::before {
+  left: 100%;
+}
+
+.navbar-link:hover {
+  background: #01F9C6(212, 140, 140, 0.22);
+  color: #ebeeed;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.3px;
+}
+
+/* Active link with modern styling */
+.navbar-link.active {
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Modern mobile menu button */
+.menu-button {
+  display: none;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 0.6rem 1rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: white;
+  backdrop-filter: blur(10px);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.menu-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+/* Mobile Responsive with modern touch */
+@media (max-width: 768px) {
+  .navbar {
+    border-radius: 18px;
+    margin: 1rem;
+    padding: 1rem 5%;
+  }
+  
+  .navbar-logo {
+    font-size: 1.8rem;
+    padding: 0.5rem 1.5rem;
+  }
+  
+  .menu-button {
+    display: block;
+  }
+  
+  .navbar-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 1rem;
+    right: 1rem;
+    background: linear-gradient(135deg, #d09494 0%, #c28484 100%);
+    flex-direction: column;
+    padding: 1.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    z-index: 1000;
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  .navbar-menu.active {
+    display: flex;
+  }
+  
+  .navbar-link {
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .navbar-link:hover {
+    transform: translateX(5px);
+  }
+}
+
+/* Animation for mobile menu */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth animation for navbar */
+.navbar {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional: Add a hover effect for the entire navbar */
+.navbar:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}

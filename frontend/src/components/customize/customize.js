@@ -7,46 +7,81 @@ function Customize() {
   const [custom, setCustom] = useState("");
   const [shortUrl, setShortUrl] = useState("");
   const [shortId, setShortId] = useState("");
+  const [copied, setCopied] = useState(false);
 
   const createShort = async () => {
-    const res = await axios.post("http://localhost:5001/shorten", {
-      longUrl,
-      custom,
+    try {
+      const res = await axios.post("http://localhost:5001/shorten", {
+        longUrl,
+        custom,
+      });
+
+      setShortUrl(res.data.shortUrl);
+      const id = res.data.shortUrl.replace("http://localhost:5001/", "");
+      setShortId(id);
+      setCopied(false);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(shortUrl).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
     });
-
-    setShortUrl(res.data.shortUrl);
-
-    const id = res.data.shortUrl.replace("http://localhost:5001/", "");
-    setShortId(id);
   };
 
   return (
-    <div style={{ padding: 40 }}>
-      <h1>URL Shortener</h1>
+    <div className="custom-wrapper">
+      <div className="custom-card">
+        <h1 className="head1">Customize URL Shortener</h1>
 
-      <input
-        type="text"
-        placeholder="Enter long URL"
-        onChange={(e) => setLongUrl(e.target.value)}
-      />
-      <br />
-      <br />
+        <div className="custom-content">
+          <div className="custom-left">
+            <input
+              className="longurl"
+              type="text"
+              placeholder="Enter long URL"
+              onChange={(e) => setLongUrl(e.target.value)}
+            />
 
-      <input
-        type="text"
-        placeholder="Custom short URL (optional)"
-        onChange={(e) => setCustom(e.target.value)}
-      />
-      <br />
-      <br />
+            <input
+              className="customurl"
+              type="text"
+              placeholder="Custom short URL (optional)"
+              onChange={(e) => setCustom(e.target.value)}
+            />
 
-      <button onClick={createShort}>Generate Short URL</button>
+            <button onClick={createShort} className="generate">
+              Generate Short URL
+            </button>
 
-      {shortId && (
-        <p>
-          Short URL: <a href={shortUrl}>{shortId}</a>
-        </p>
-      )}
+            {shortId && (
+              <div className="result">
+                <span>
+                  Short URL:{" "}
+                  <a href={shortUrl} target="_blank" rel="noopener noreferrer">
+                    {shortId}
+                  </a>
+                </span>
+                <button className="copy-btn" onClick={copyToClipboard}>
+                  {copied ? "Copied!" : "Copy"}
+                </button>
+              </div>
+            )}
+          </div>
+
+          <div className="custom-right">
+            <h3>Why Customize?</h3>
+            <p>
+              Customize your short URL to make it unique and easy to remember.
+              Personalized links look more professional and help build trust.
+              This is ideal for branding, marketing, and clear sharing.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

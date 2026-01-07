@@ -9,22 +9,32 @@ function Navbar() {
 
       <ul className="navbar-menu active">
         <li>
-          <NavLink to="/" className="navbar-link">
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/customm" className="navbar-link">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "navbar-link active" : "navbar-link"
+            }
+          >
             Customize
           </NavLink>
         </li>
         <li>
-          <NavLink to="/auto-generate" className="navbar-link">
+          <NavLink
+            to="/auto"
+            className={({ isActive }) =>
+              isActive ? "navbar-link active" : "navbar-link"
+            }
+          >
             Auto Generate
           </NavLink>
         </li>
         <li>
-          <NavLink to="/about" className="navbar-link">
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive ? "navbar-link active" : "navbar-link"
+            }
+          >
             About
           </NavLink>
         </li>

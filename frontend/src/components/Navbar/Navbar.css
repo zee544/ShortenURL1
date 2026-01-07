@@ -1,19 +1,16 @@
-/* Navbar.css - Professional Modern Design */
-
+/* Navbar base */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
   height: 80px;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  position: relative;
-  z-index: 1000;
-  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
-/* Logo styling */
+/* Logo */
 .navbar-logo {
   font-size: 2.2rem;
   font-weight: 700;
@@ -21,69 +18,34 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  letter-spacing: 1px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  cursor: pointer;
 }
 
-.navbar-logo:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
-}
-
-/* Mobile menu button */
-.menu-button {
-  display: none;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
-  font-size: 1.8rem;
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  align-items: center;
-  justify-content: center;
-}
-
-.menu-button:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: rotate(90deg);
-}
-
-/* Desktop menu */
+/* Menu */
 .navbar-menu {
   display: flex;
   list-style: none;
   gap: 2.5rem;
   margin: 0;
   padding: 0;
-  align-items: center;
 }
 
-.navbar-menu li {
-  position: relative;
-}
-
+/* Links */
 .navbar-link {
   color: #e2e8f0;
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 500;
-  padding: 0.75rem 0;
-  transition: all 0.3s ease;
-  letter-spacing: 0.5px;
+  padding: 0.5rem 0;
   position: relative;
-  display: inline-block;
+  transition: color 0.3s ease;
 }
 
+/* Underline */
 .navbar-link::after {
-  content: '';
+  content: "";
   position: absolute;
-  bottom: 0;
   left: 0;
+  bottom: -6px;
   width: 0;
   height: 2px;
   background: linear-gradient(90deg, #01f9c6, #197794);
@@ -91,69 +53,36 @@
   border-radius: 2px;
 }
 
+/* Hover underline */
 .navbar-link:hover {
-  color: white;
+  color: #fff;
 }
-
 .navbar-link:hover::after {
   width: 100%;
 }
 
-/* Active link styling */
+/* Active link underline */
 .navbar-link.active {
-  color: white;
+  color: #fff;
   font-weight: 600;
 }
-
 .navbar-link.active::after {
   width: 100%;
-  background: linear-gradient(90deg, #01f9c6, #197794);
 }
 
-/* Mobile menu styles */
-@media screen and (max-width: 768px) {
-  .navbar {
-    padding: 0 1.5rem;
-    height: 70px;
-  }
-
- 
-
- 
-
-  .navbar-menu.active {
-    height: calc(100vh - 70px);
-  }
-
-  .navbar-menu li {
+/* Mobile */
+@media (max-width: 768px) {
+  .navbar-menu {
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
     width: 100%;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    background: #16213e;
   }
-
-  .navbar-menu.active li {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .navbar-menu.active li:nth-child(1) { transition-delay: 0.1s; }
-  .navbar-menu.active li:nth-child(2) { transition-delay: 0.2s; }
-  .navbar-menu.active li:nth-child(3) { transition-delay: 0.3s; }
-  .navbar-menu.active li:nth-child(4) { transition-delay: 0.4s; }
 
   .navbar-link {
-    display: block;
-    width: 100%;
     padding: 1.2rem 2rem;
-    font-size: 1.2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.3s ease;
-  }
-
-  .navbar-link:hover {
-    background: rgba(255, 255, 255, 0.05);
-    padding-left: 2.5rem;
   }
 
   .navbar-link::after {
@@ -161,53 +90,7 @@
   }
 
   .navbar-link.active {
-    background: linear-gradient(90deg, rgba(108, 99, 255, 0.1), rgba(76, 201, 240, 0.1));
-    border-left: 3px solid #4cc9f0;
+    background: rgba(1, 249, 198, 0.1);
+    border-left: 3px solid #01f9c6;
   }
-}
-
-/* Tablet responsive */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  .navbar {
-    padding: 0 1.5rem;
-  }
-
-  .navbar-menu {
-    gap: 1.5rem;
-  }
-
-  .navbar-link {
-    font-size: 1rem;
-  }
-}
-
-/* Animation for menu items */
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.navbar-menu:not(.active) li {
-  animation: slideIn 0.5s ease forwards;
-}
-
-/* Focus states for accessibility */
-.navbar-link:focus,
-.menu-button:focus {
-  outline: 2px solid rgba(76, 201, 240, 0.5);
-  outline-offset: 2px;
-}
-
-/* Smooth transitions */
-.navbar,
-.navbar-menu,
-.navbar-link,
-.menu-button {
-  transition: all 0.3s ease;
 }

@@ -10,16 +10,31 @@
   font-family: "Segoe UI", sans-serif;
 }
 
-/* Logo */
 .navbar-logo {
-  font-size: 2.2rem;
-  font-weight: 700;
-  background: linear-gradient(45deg, #01f9c6, #197794);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  display: flex;
+  align-items: center;
 }
 
+/* Logo image */
+.navbar-logo img {
+  height: 90px;
+  width: 110px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.navbar-logo img:hover {
+  transform: scale(1.05);
+}
+
+/* Mobile logo size */
+@media (max-width: 768px) {
+  .navbar-logo img {
+    height: 42px;
+  }
+}
 /* Menu */
 .navbar-menu {
   display: flex;

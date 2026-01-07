@@ -1,0 +1,130 @@
+/* About Component CSS */
+
+.about-wrapper {
+  display: flex;
+  flex-direction: column; /* stack items vertically */
+  justify-content: flex-start; /* start from top by default */
+  align-items: center; /* horizontally center content */
+    padding: 5rem 1rem;
+  background: linear-gradient(135deg, #f6f9fc 0%, #f1f5f9 100%);
+  min-height: 80vh; /* minimum height */
+  width: 100%;
+  box-sizing: border-box; /* include padding in height */
+
+}
+
+.about-para p {
+  font-size: 1.09rem;
+  line-height: 1.7;
+  color: #444d5a;
+  margin: 0;
+  font-weight: 400;
+}
+
+.list-about li{
+    color: #093470;
+}
+.list-about i{
+    color: #bec8d6;
+}
+
+
+.about-head{
+    font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+  color: #1e293b;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  position: relative;
+  padding-bottom: 1rem;
+
+  text-shadow: 2px 2px 4px #a9c5aa;
+}
+
+.about-head::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #01f9c6, #197794);
+  border-radius: 2px;
+}
+.about-card {
+  background: #fff;
+  max-width: 800px;
+  width: 100%;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.about-head {
+  font-size: 2.5rem;
+  color: #222;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.about-para {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.8;
+}
+
+.about-sub {
+  font-size: 1.3rem;
+  color: #111;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.list-about {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.list-about li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.list-about li i {
+  font-style: italic;
+  color: #007BFF; /* Highlight feature title */
+}
+
+@media screen and (max-width: 768px) {
+  .about-card {
+    padding: 25px;
+  }
+
+  .about-head {
+    font-size: 2rem;
+  }
+
+  .about-para {
+    font-size: 1rem;
+  }
+
+  .about-sub {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-height: 700px) {
+  .about-wrapper {
+    justify-content: center;
+  }
+}

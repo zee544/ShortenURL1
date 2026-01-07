@@ -82,6 +82,29 @@ function Customize() {
           </div>
         </div>
       </div>
+      {/* Features */}
+          <div className="features-grid">
+            <div className="feature-card">
+              <div className="feature-icon">⚡</div>
+              <h3>Lightning Fast</h3>
+              <p>Create short URLs instantly with our high-performance service</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">🔒</div>
+              <h3>Secure & Reliable</h3>
+              <p>All URLs are encrypted and served over HTTPS for maximum security</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">📊</div>
+              <h3>Analytics Ready</h3>
+              <p>Track clicks and engagement with built-in analytics (coming soon)</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">🔄</div>
+              <h3>Custom URLs</h3>
+              <p>Create memorable custom URLs that reflect your brand</p>
+            </div>
+          </div>
     </div>
   );
 }

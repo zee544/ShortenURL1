@@ -69,6 +69,61 @@
 .navbar-link.active::after {
   width: 100%;
 }
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 6px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar-menu {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+
+    background: #16213e;
+    flex-direction: column;
+    align-items: center;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .navbar-menu.open {
+    max-height: 300px;
+  }
+
+  .navbar-link {
+    padding: 1.2rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-link::after {
+    display: none;
+  }
+
+  .navbar-link.active {
+    background: rgba(1, 249, 198, 0.1);
+  }
+}
+
 
 /* Mobile */
 @media (max-width: 768px) {

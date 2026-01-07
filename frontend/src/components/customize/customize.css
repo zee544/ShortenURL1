@@ -1,16 +1,16 @@
 .custom-wrapper {
-  min-height: calc(100vh - 80px);
+  min-height: auto;
   place-items: center;
 
   width: 100%;
   align-items: center;
   justify-content: center;
-  padding: 2rem 1rem;
+  padding: 5rem 1rem;
   background: linear-gradient(135deg, #f6f9fc 0%, #f1f5f9 100%);
 }
 
 .custom-card {
-  height: 450px;
+  height: auto;
   width: 100%;
   max-width: 1000px;
   background: white;
@@ -208,6 +208,46 @@
   font-weight: 400;
 }
 
+/* Features Grid */
+.features-grid {
+  display: grid;
+ grid-template-columns: repeat(2, 1fr); /* exactly 2 cards per row */
+  gap: 2rem; /* space between cards */
+  margin-top: 50px;
+  
+}
+
+.feature-card {
+  text-align: center;
+  padding: 30px 20px;
+  background: var(--background-color);
+  border-radius: 12px;
+  transition: var(--transition);
+  background: linear-gradient(90deg, #01f9c71f, #19779400);
+ 
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -247,6 +287,9 @@
     height: 3px;
     top: 0;
     left: 0;
+  }
+    .features-grid {
+    grid-template-columns: 1fr;
   }
 }
 

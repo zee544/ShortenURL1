@@ -41,6 +41,17 @@ function Navbar() {
             Auto Generate
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            to="/qr"
+            onClick={() => setOpen(false)}
+            className={({ isActive }) =>
+              isActive ? "navbar-link active" : "navbar-link"
+            }
+          >
+            Generate QR
+          </NavLink>
+        </li>
 
         <li>
           <NavLink

@@ -5,6 +5,7 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path");
 const connectDB = require("./config/db");
+const qrRotes=require("./routes/qrroutes")
 
 const app = express();
 
@@ -16,6 +17,7 @@ connectDB();
 
 // API routes
 app.use("/", require("./routes/urlRoutes")); 
+app.use("/api/qr", qrRotes);
 
 // Serve React frontend in production
 if (process.env.NODE_ENV === "production") {

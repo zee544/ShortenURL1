@@ -8,6 +8,7 @@ import Nav from "./components/Navbar/Navbar";
 import AutoGenerate from "./components/AutoGenerate/AutoGenerate";
 import About from "./components/About/About"
 import Footer from "./components/Footer";
+import QRGenerator from "./components/QRgenerator/QRGenerator";
 function App() {
   return (
     <>
@@ -21,6 +22,7 @@ function App() {
         <Route path="/home1" element={<Home />} />
         <Route path="/auto" element={<AutoGenerate />} />
         <Route path="/about" element={<About />} />
+         <Route path="/qr" element={<QRGenerator />} />
       </Routes>
 
       <Footer />

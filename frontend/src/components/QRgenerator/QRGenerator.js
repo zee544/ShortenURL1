@@ -49,7 +49,11 @@ const QRGenerator = () => {
               onChange={(e) => setUrl(e.target.value)}
             />
 
-            <button onClick={handleGenerate} className="qr-gen-btn" disabled={loading}>
+            <button
+              onClick={handleGenerate}
+              className="qr-gen-btn"
+              disabled={loading}
+            >
               {loading ? "Generating..." : "Generate QR"}
             </button>
 
@@ -58,7 +62,11 @@ const QRGenerator = () => {
                 <div className="qr-gen-preview">
                   <img src={qrImage} alt="QR Code" />
                 </div>
-                <a href={qrImage} download="qr-code.png" className="qr-gen-download">
+                <a
+                  href={qrImage}
+                  download="qr-code.png"
+                  className="qr-gen-download"
+                >
                   Download QR Code
                 </a>
               </div>
@@ -68,12 +76,15 @@ const QRGenerator = () => {
           <div className="qr-gen-right">
             <h3>Why Use QR Codes?</h3>
             <p>
-              QR codes make sharing URLs easy and efficient. Simply scan the code with any smartphone camera to instantly access the link. Perfect for business cards, flyers, presentations, and digital sharing.
+              QR codes make sharing URLs easy and efficient. Simply scan the
+              code with any smartphone camera to instantly access the link.
+              Perfect for business cards, flyers, presentations, and digital
+              sharing.
             </p>
           </div>
         </div>
       </div>
-      
+
       {/* Features */}
       <div className="qr-features-grid">
         <div className="qr-feature-card">

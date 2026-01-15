@@ -211,10 +211,9 @@
 /* Features Grid */
 .features-grid {
   display: grid;
- grid-template-columns: repeat(2, 1fr); /* exactly 2 cards per row */
+  grid-template-columns: repeat(2, 1fr); /* exactly 2 cards per row */
   gap: 2rem; /* space between cards */
   margin-top: 50px;
-  
 }
 
 .feature-card {
@@ -224,7 +223,6 @@
   border-radius: 12px;
   transition: var(--transition);
   background: linear-gradient(90deg, #01f9c71f, #19779400);
- 
 }
 
 .feature-card:hover {
@@ -288,7 +286,7 @@
     top: 0;
     left: 0;
   }
-    .features-grid {
+  .features-grid {
     grid-template-columns: 1fr;
   }
 }

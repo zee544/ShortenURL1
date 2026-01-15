@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
- // reuse styles if you want
+// reuse styles if you want
 
 function AutoGenerate() {
   const [longUrl, setLongUrl] = useState("");
@@ -11,7 +11,7 @@ function AutoGenerate() {
   const createShort = async () => {
     try {
       const res = await axios.post("http://localhost:5001/shorten", {
-        longUrl
+        longUrl,
       });
 
       setShortUrl(res.data.shortUrl);
@@ -53,11 +53,7 @@ function AutoGenerate() {
               <div className="result">
                 <span>
                   Short URL:{" "}
-                  <a
-                    href={shortUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href={shortUrl} target="_blank" rel="noopener noreferrer">
                     {shortId}
                   </a>
                 </span>

@@ -82,7 +82,7 @@ function Customize() {
           </div>
         </div>
       </div>
-      {/* Features */}
+    
           <div className="features-grid">
             <div className="feature-card">
               <div className="feature-icon">⚡</div>

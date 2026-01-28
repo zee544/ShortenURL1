@@ -1,4 +1,4 @@
-/* QRGenerator.css - Unique class names to prevent conflicts */
+
 .qr-gen-wrapper {
   min-height: 100vh;
   display: flex;
@@ -215,7 +215,6 @@
   font-weight: 400;
 }
 
-/* Features Grid */
 .qr-features-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -257,7 +256,6 @@
   line-height: 1.5;
 }
 
-/* Animations */
 @keyframes qr-fadeIn {
   from {
     opacity: 0;
@@ -273,7 +271,6 @@
   animation: qr-fadeIn 0.6s ease-out;
 }
 
-/* Loading animation */
 .qr-gen-btn:disabled::after {
   content: "";
   display: inline-block;
@@ -292,7 +289,6 @@
   }
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
   .qr-features-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -372,7 +368,7 @@
   }
 }
 
-/* Error state */
+
 .qr-gen-input.error {
   border-color: #ef4444;
   box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);

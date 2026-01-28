@@ -2,15 +2,15 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import "./Navbar.css";
 
-
 function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
     <nav className="navbar">
-      <h2 className="navbar-logo"><img src="/logo1.png" alt="Zee Logo" /></h2>
+      <h2 className="navbar-logo">
+        <img src="/logo1.png" alt="Zee Logo" />
+      </h2>
 
-      {/* Hamburger */}
       <div className="hamburger" onClick={() => setOpen(!open)}>
         <span></span>
         <span></span>

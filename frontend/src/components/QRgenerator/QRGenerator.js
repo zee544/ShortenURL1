@@ -85,7 +85,7 @@ const QRGenerator = () => {
         </div>
       </div>
 
-      {/* Features */}
+      
       <div className="qr-features-grid">
         <div className="qr-feature-card">
           <div className="qr-feature-icon">📱</div>

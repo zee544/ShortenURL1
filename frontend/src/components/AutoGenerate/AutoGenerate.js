@@ -1,6 +1,5 @@
 import { useState } from "react";
 import axios from "axios";
-// reuse styles if you want
 
 function AutoGenerate() {
   const [longUrl, setLongUrl] = useState("");

@@ -211,8 +211,8 @@
 /* Features Grid */
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* exactly 2 cards per row */
-  gap: 2rem; /* space between cards */
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 2rem; 
   margin-top: 50px;
 }
 
